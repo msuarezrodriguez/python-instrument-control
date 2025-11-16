@@ -1,0 +1,6 @@
+qcodes
+pyvisa
+pyvisa-py
+numpy
+pandas
+matplotlib
