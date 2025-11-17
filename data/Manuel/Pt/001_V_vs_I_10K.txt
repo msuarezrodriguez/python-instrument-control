@@ -14,7 +14,7 @@
 # temp_tolerance = 0.1
 # temp_max_wait = 15000
 # temp_loop = 1
-# Columns: I[A]	V[V]
+I[A]	V[V]
 5.000000e-08	3.015760e-04
 1.027778e-07	3.124240e-04
 1.555556e-07	3.247020e-04

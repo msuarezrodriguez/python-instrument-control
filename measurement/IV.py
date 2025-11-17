@@ -20,11 +20,11 @@ def voltage_source_iv(
     """
     Perform a voltage-source I–V sweep:
     ----------------------------------------------------------
-    • Source a voltage on the given SMU channel.
-    • Sweep from 'start' to 'stop' using 'num_points' steps.
-    • At each point, measure the resulting current.
-    • Display an updating live plot: I vs V.
-    • Return arrays: (V_array, I_array)
+    - Source a voltage on the given SMU channel.
+    - Sweep from 'start' to 'stop' using 'num_points' steps.
+    - At each point, measure the resulting current.
+    - Display an updating live plot: I vs V.
+    - Return arrays: (V_array, I_array)
     ----------------------------------------------------------
 
     Parameters
@@ -113,11 +113,11 @@ def current_source_iv(
     """
     Perform a current-source I–V sweep:
     ----------------------------------------------------------
-    • Source a current on the given SMU channel.
-    • Sweep from 'start' to 'stop' using 'num_points' steps.
-    • At each point, measure the resulting voltage.
-    • Display an updating live plot: V vs I.
-    • Return arrays: (I_array, V_array)
+    - Source a current on the given SMU channel.
+    - Sweep from 'start' to 'stop' using 'num_points' steps.
+    - At each point, measure the resulting voltage.
+    - Display an updating live plot: V vs I.
+    - Return arrays: (I_array, V_array)
     ----------------------------------------------------------
 
     Parameters

@@ -10,8 +10,8 @@ class LivePlotIV:
     Generic live plot engine for real-time experimental data.
 
     This class is used as the backbone for:
-        • I–V and V–I sweeps
-        • V–T and I–T sweeps
+        - I–V and V–I sweeps
+        - V–T and I–T sweeps
 
     It provides:
         - interactive matplotlib figure

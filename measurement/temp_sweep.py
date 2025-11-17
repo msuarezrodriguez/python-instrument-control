@@ -41,8 +41,8 @@ def _continuous_temp_sweep(
       mode == "voltage" → source voltage → measure I(T)
 
     This is the workhorse for:
-        • V vs T at fixed I
-        • I vs T at fixed V
+        - V vs T at fixed I
+        - I vs T at fixed V
 
     It:
       1) Optionally moves to T_start (coarse stabilization)
@@ -245,8 +245,8 @@ def run_v_vs_t_current_source(
     """
     V vs T sweep with fixed current:
     ----------------------------------------------------------
-    • SMU sources current → voltage is measured as T ramps.
-    • Internally calls _continuous_temp_sweep(mode="current").
+    - SMU sources current vs voltage is measured as T ramps.
+    - Internally calls _continuous_temp_sweep(mode="current").
     """
     return _continuous_temp_sweep(
         smu=smu,
@@ -286,8 +286,8 @@ def run_i_vs_t_voltage_source(
     """
     I vs T sweep with fixed voltage:
     ----------------------------------------------------------
-    • SMU sources voltage → current is measured as T ramps.
-    • Internally calls _continuous_temp_sweep(mode="voltage").
+    - SMU sources voltage vs current is measured as T ramps.
+    - Internally calls _continuous_temp_sweep(mode="voltage").
     """
     return _continuous_temp_sweep(
         smu=smu,

@@ -23,25 +23,25 @@ LAKESHORE_GPIB_ADDRESS = 22  # Lakeshore 336 GPIB
 # MEASUREMENT MODES (overview)
 # -------------------------------------------------------------------------
 # mode = "voltage"
-#     → Voltage-source I–V:
+#      Voltage-source I–V:
 #         - Sweep V from start → stop
 #         - Measure I(V)
 #         - Optional temperature stabilization at a setpoint
 #
 # mode = "current"
-#     → Current-source I–V:
+#      Current-source I–V:
 #         - Sweep I from start → stop
 #         - Measure V(I)
 #         - Optional temperature stabilization at a setpoint
 #
 # mode = "v_vs_t_current"
-#     → V vs T at fixed current:
+#      V vs T at fixed current:
 #         - Source fixed current
 #         - Ramp temperature from t_start → t_stop (no stabilization per point)
 #         - Measure V(T) continuously
 #
 # mode = "i_vs_t_voltage"
-#     → I vs T at fixed voltage:
+#      I vs T at fixed voltage:
 #         - Source fixed voltage
 #         - Ramp temperature from t_start → t_stop (no stabilization per point)
 #         - Measure I(T) continuously
@@ -123,108 +123,6 @@ MEASUREMENTS = [
     #     "current_limit": 1e-3,   # [A] SMU current compliance
     #     "go_to_t_start": True,   # True → pre-ramp to t_start before continuous sweep
     #},
-    {
-        "mode": "current",
-        "channel": "a",        # SMU channel: "a" or "b"
-        "start": 5e-8,        # [A] start of current sweep
-        "stop": 1e-6,          # [A] end of current sweep
-        "num_points": 19,      # number of points in the sweep
-        "acq_time": 1.0,       # [s] wait time after setting each I
-        "limit": 1.0,          # [V] voltage compliance
-
-        # --- temperature control ---
-        "temp_control": True,      # if False or missing → ignore all temp settings
-        "temp_setpoint": 250,        # [K] target temperature
-        "temp_channel": "A",       # LS336 sensor used to read T (A closest to sample)
-        "temp_tolerance": 0.1,     # [K] |T - setpoint| <= tolerance
-        "temp_max_wait": 15000,       # [s] max time to wait for stabilization
-        "temp_loop": 1,            # control loop number (1–4)
-    },
-    {
-        "mode": "current",
-        "channel": "a",        # SMU channel: "a" or "b"
-        "start": 5e-8,        # [A] start of current sweep
-        "stop": 1e-6,          # [A] end of current sweep
-        "num_points": 19,      # number of points in the sweep
-        "acq_time": 1.0,       # [s] wait time after setting each I
-        "limit": 1.0,          # [V] voltage compliance
-
-        # --- temperature control ---
-        "temp_control": True,      # if False or missing → ignore all temp settings
-        "temp_setpoint": 200,        # [K] target temperature
-        "temp_channel": "A",       # LS336 sensor used to read T (A closest to sample)
-        "temp_tolerance": 0.1,     # [K] |T - setpoint| <= tolerance
-        "temp_max_wait": 15000,       # [s] max time to wait for stabilization
-        "temp_loop": 1,            # control loop number (1–4)
-    },
-    {
-        "mode": "current",
-        "channel": "a",        # SMU channel: "a" or "b"
-        "start": 5e-8,        # [A] start of current sweep
-        "stop": 1e-6,          # [A] end of current sweep
-        "num_points": 19,      # number of points in the sweep
-        "acq_time": 1.0,       # [s] wait time after setting each I
-        "limit": 1.0,          # [V] voltage compliance
-
-        # --- temperature control ---
-        "temp_control": True,      # if False or missing → ignore all temp settings
-        "temp_setpoint": 150,        # [K] target temperature
-        "temp_channel": "A",       # LS336 sensor used to read T (A closest to sample)
-        "temp_tolerance": 0.1,     # [K] |T - setpoint| <= tolerance
-        "temp_max_wait": 15000,       # [s] max time to wait for stabilization
-        "temp_loop": 1,            # control loop number (1–4)
-    },
-    {
-        "mode": "current",
-        "channel": "a",        # SMU channel: "a" or "b"
-        "start": 5e-8,        # [A] start of current sweep
-        "stop": 1e-6,          # [A] end of current sweep
-        "num_points": 19,      # number of points in the sweep
-        "acq_time": 1.0,       # [s] wait time after setting each I
-        "limit": 1.0,          # [V] voltage compliance
-
-        # --- temperature control ---
-        "temp_control": True,      # if False or missing → ignore all temp settings
-        "temp_setpoint": 100,        # [K] target temperature
-        "temp_channel": "A",       # LS336 sensor used to read T (A closest to sample)
-        "temp_tolerance": 0.1,     # [K] |T - setpoint| <= tolerance
-        "temp_max_wait": 15000,       # [s] max time to wait for stabilization
-        "temp_loop": 1,            # control loop number (1–4)
-    },
-    {
-        "mode": "current",
-        "channel": "a",        # SMU channel: "a" or "b"
-        "start": 5e-8,        # [A] start of current sweep
-        "stop": 1e-6,          # [A] end of current sweep
-        "num_points": 19,      # number of points in the sweep
-        "acq_time": 1.0,       # [s] wait time after setting each I
-        "limit": 1.0,          # [V] voltage compliance
-
-        # --- temperature control ---
-        "temp_control": True,      # if False or missing → ignore all temp settings
-        "temp_setpoint": 50,        # [K] target temperature
-        "temp_channel": "A",       # LS336 sensor used to read T (A closest to sample)
-        "temp_tolerance": 0.1,     # [K] |T - setpoint| <= tolerance
-        "temp_max_wait": 15000,       # [s] max time to wait for stabilization
-        "temp_loop": 1,            # control loop number (1–4)
-    },
-    {
-        "mode": "current",
-        "channel": "a",        # SMU channel: "a" or "b"
-        "start": 5e-8,        # [A] start of current sweep
-        "stop": 1e-6,          # [A] end of current sweep
-        "num_points": 19,      # number of points in the sweep
-        "acq_time": 1.0,       # [s] wait time after setting each I
-        "limit": 1.0,          # [V] voltage compliance
-
-        # --- temperature control ---
-        "temp_control": True,      # if False or missing → ignore all temp settings
-        "temp_setpoint": 10,        # [K] target temperature
-        "temp_channel": "A",       # LS336 sensor used to read T (A closest to sample)
-        "temp_tolerance": 0.1,     # [K] |T - setpoint| <= tolerance
-        "temp_max_wait": 15000,       # [s] max time to wait for stabilization
-        "temp_loop": 1,            # control loop number (1–4)
-    },
 ]
 
 
@@ -273,13 +171,13 @@ def main():
         # CONFIGURE LAKESHORE (ONLY IF CONNECTED)
         # ---------------------------------------------------------------------
         # This configures:
-        #   • Output 1 in closed-loop mode using sensor A
-        #   • Heater range
-        #   • A default ramp (1 K/min)
+        #   - Output 1 in closed-loop mode using sensor A
+        #   - Heater range
+        #   - A default ramp (1 K/min)
         #
         # These settings are used for:
-        #   • Temperature stabilization before IV curves
-        #   • Continuous ramps for V vs T and I vs T sweeps
+        #   - Temperature stabilization before IV curves
+        #   - Continuous ramps for V vs T and I vs T sweeps
         #
         # If the Lakeshore is not connected, all temperature functionality
         # will be automatically skipped.
@@ -350,7 +248,7 @@ def main():
 
                 if mode in ("voltage", "current") and m.get("temp_control", False):
                     if ls is None:
-                        print("[WARNING] temp_control=True but LakeShore is not connected → skipping temperature stabilization.")
+                        print("[WARNING] temp_control=True but LakeShore is not connected, skipping temperature stabilization.")
                     else:
                         setpoint = m["temp_setpoint"]
                         temp_ch = m.get("temp_channel", "A")
@@ -420,7 +318,7 @@ def main():
 
                 elif mode == "v_vs_t_current":
                     if ls is None:
-                        print("[ERROR] LakeShore not connected → cannot run V vs T.")
+                        print("[ERROR] LakeShore not connected, cannot run V vs T.")
                         continue
 
                     result = run_v_vs_t_current_source(
@@ -449,7 +347,7 @@ def main():
 
                 elif mode == "i_vs_t_voltage":
                     if ls is None:
-                        print("[ERROR] LakeShore not connected → cannot run I vs T.")
+                        print("[ERROR] LakeShore not connected, cannot run I vs T.")
                         continue
 
                     result = run_i_vs_t_voltage_source(

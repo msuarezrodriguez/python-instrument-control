@@ -20,8 +20,8 @@ def save_iv_data(
     Save data from classic I–V or V–I sweeps.
 
     This is used for:
-        • mode="voltage"  → V sweep, measure I(V)
-        • mode="current"  → I sweep, measure V(I)
+        - mode="voltage": V sweep, measure I(V)
+        . mode="current": I sweep, measure V(I)
 
     The file contains:
         - complete measurement metadata
@@ -38,8 +38,8 @@ def save_iv_data(
         The entry in MEASUREMENTS defining this sweep.
     x, y : sequence of float
         Sweep vectors:
-            voltage mode → x = voltage, y = current
-            current mode → x = current, y = voltage
+            voltage mode: x = voltage, y = current
+            current mode: x = current, y = voltage
 
     Returns
     -------
@@ -78,7 +78,7 @@ def save_iv_data(
         for key, value in measurement.items():
             f.write(f"# {key} = {value}\n")
 
-        f.write(f"# Columns: {col_header}\n")
+        f.write(f"{col_header}\n")
 
         # Numerical data
         for xi, yi in zip(x, y):
@@ -103,8 +103,8 @@ def save_temp_data(
     Save data from temperature sweeps (V vs T or I vs T).
 
     This function is used in:
-        • V vs T @ fixed I
-        • I vs T @ fixed V
+        - V vs T with fixed I
+        - I vs T with fixed V
 
     The file includes:
         - complete measurement metadata from MEASUREMENTS
@@ -166,7 +166,7 @@ def save_temp_data(
             f.write(f"#   {key} = {value}\n")
 
         # Column header
-        f.write("# Columns: time_s\tT[K]\tV[V]\tI[A]\n")
+        f.write("time_s\tT[K]\tV[V]\tI[A]\n")
 
         # Numerical data
         for t, T, V, I in zip(time_s, T_K, V_V, I_A):
